@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://majicservice.com/sitemap.xml
