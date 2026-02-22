@@ -925,6 +925,22 @@ p { margin-bottom: 1rem; }
 }
 
 /* ══════════════════════════════════════ */
+/* CENTERED GRID UTILITIES               */
+/* ══════════════════════════════════════ */
+.grid-2-centered {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.grid-3-centered {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ══════════════════════════════════════ */
 /* RESPONSIVE                            */
 /* ══════════════════════════════════════ */
 
@@ -1047,6 +1063,13 @@ a, button, .btn, .nav-toggle {
   /* Benefits grid */
   .benefits-grid { grid-template-columns: 1fr; }
   .benefit-card { padding: 24px 16px; }
+
+  /* Centered grids stack on mobile */
+  .grid-2-centered,
+  .grid-3-centered {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
 
   /* Parallax */
   .parallax-cta { min-height: 280px; }
