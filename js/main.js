@@ -144,4 +144,62 @@
     });
   });
 
+  // ══════════════════════════════════════
+  // CONTACT FORM → GHL WEBHOOK
+  // ══════════════════════════════════════
+  var contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    // ⚠️ REPLACE THIS with your deployed Cloudflare Worker URL
+    var WORKER_URL = 'https://majic-contact.alfanoministries.workers.dev/';
+
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Honeypot check
+      if (contactForm.querySelector('[name="_gotcha"]').value) return;
+
+      var btn = document.getElementById('contactSubmitBtn');
+      var status = document.getElementById('contactFormStatus');
+      var originalText = btn.textContent;
+
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+      status.style.display = 'none';
+
+      var data = {
+        first_name: contactForm.querySelector('[name="first_name"]').value.trim(),
+        last_name: contactForm.querySelector('[name="last_name"]').value.trim(),
+        email: contactForm.querySelector('[name="email"]').value.trim(),
+        phone: contactForm.querySelector('[name="phone"]').value.trim(),
+        service: contactForm.querySelector('[name="service"]').value,
+        vehicle: contactForm.querySelector('[name="vehicle"]').value.trim(),
+        message: contactForm.querySelector('[name="message"]').value.trim()
+      };
+
+      fetch(WORKER_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      })
+      .then(function (res) {
+        if (!res.ok) throw new Error('Failed');
+        status.textContent = 'Message sent! We\'ll get back to you within 24 hours.';
+        status.style.display = 'block';
+        status.style.background = '#d4edda';
+        status.style.color = '#155724';
+        contactForm.reset();
+      })
+      .catch(function () {
+        status.textContent = 'Something went wrong. Please call us or try again.';
+        status.style.display = 'block';
+        status.style.background = '#f8d7da';
+        status.style.color = '#721c24';
+      })
+      .finally(function () {
+        btn.disabled = false;
+        btn.textContent = originalText;
+      });
+    });
+  }
+
 })();

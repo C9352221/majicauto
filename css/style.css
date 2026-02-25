@@ -679,6 +679,37 @@ p { margin-bottom: 1rem; }
   color: var(--color-body);
 }
 
+/* Feature Cards (Fleet Benefits) */
+.feature-card {
+  text-align: center;
+  padding: 32px 20px;
+  background: var(--color-surface, #fff);
+  border-radius: 12px;
+}
+.feature-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(21,97,109,0.1);
+  border-radius: 50%;
+  color: var(--color-primary);
+}
+.feature-icon svg {
+  width: 28px;
+  height: 28px;
+}
+.feature-card h3 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+.feature-card p {
+  font-size: 0.9rem;
+  color: var(--color-body);
+}
+
 /* ══════════════════════════════════════ */
 /* TESTIMONIAL                           */
 /* ══════════════════════════════════════ */
@@ -794,6 +825,13 @@ p { margin-bottom: 1rem; }
 }
 .footer-col a:hover {
   color: var(--color-cta);
+}
+.footer-col:last-child {
+  columns: 2;
+  column-gap: 16px;
+}
+.footer-col:last-child a {
+  break-inside: avoid;
 }
 
 /* Footer Bottom */

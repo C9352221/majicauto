@@ -30,7 +30,7 @@
   <!-- ═══ Top Info Bar ═══ -->
   <div class="top-bar" role="complementary" aria-label="Contact info">
     <div class="container">
-      <span>Mon–Fri 8am–5pm &nbsp;|&nbsp; <a href="mailto:Info@majicservice.com">Info@majicservice.com</a> &nbsp;|&nbsp; <a href="tel:5551234567">(555) 123-4567</a></span>
+      <span>Mon–Fri 8am–5pm &nbsp;|&nbsp; <a href="mailto:Info@majicservice.com">Info@majicservice.com</a> &nbsp;|&nbsp; <a href="tel:5854693964">(585) 469-3964</a></span>
     </div>
   </div>
 
@@ -94,7 +94,7 @@
             <div class="location-details">
               <p>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                <a href="tel:5551234567">(555) 123-4567</a>
+                <a href="tel:5854693964">(585) 469-3964</a>
               </p>
               <p>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -120,24 +120,30 @@
           <p>Have a question or need a quote? Fill out the form below and we'll get back to you within 24 hours.</p>
         </div>
 
-        <form action="https://formspree.io/f/FORM_ID" method="POST" class="contact-form" style="max-width: 640px; margin: 48px auto 0;">
+        <form id="contactForm" class="contact-form" style="max-width: 640px; margin: 48px auto 0;" novalidate>
           <!-- Honeypot field for spam prevention -->
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
 
           <div class="form-row">
             <div class="form-group">
-              <label for="contact-name">Name <span style="color: var(--color-cta);">*</span></label>
-              <input type="text" id="contact-name" name="name" required placeholder="Your full name" autocomplete="name">
+              <label for="contact-first">First Name <span style="color: var(--color-cta);">*</span></label>
+              <input type="text" id="contact-first" name="first_name" required placeholder="First name" autocomplete="given-name">
             </div>
             <div class="form-group">
-              <label for="contact-phone">Phone</label>
-              <input type="tel" id="contact-phone" name="phone" placeholder="(555) 123-4567" autocomplete="tel">
+              <label for="contact-last">Last Name <span style="color: var(--color-cta);">*</span></label>
+              <input type="text" id="contact-last" name="last_name" required placeholder="Last name" autocomplete="family-name">
             </div>
           </div>
 
-          <div class="form-group">
-            <label for="contact-email">Email <span style="color: var(--color-cta);">*</span></label>
-            <input type="email" id="contact-email" name="email" required placeholder="your@email.com" autocomplete="email">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="contact-email">Email <span style="color: var(--color-cta);">*</span></label>
+              <input type="email" id="contact-email" name="email" required placeholder="your@email.com" autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="contact-phone">Phone <span style="color: var(--color-cta);">*</span></label>
+              <input type="tel" id="contact-phone" name="phone" required placeholder="(585) 469-3964" autocomplete="tel">
+            </div>
           </div>
 
           <div class="form-group">
@@ -168,8 +174,10 @@
           </div>
 
           <div class="form-group">
-            <button type="submit" class="btn btn-cta btn-lg" style="width: 100%;">Send Message</button>
+            <button type="submit" class="btn btn-cta btn-lg" style="width: 100%;" id="contactSubmitBtn">Send Message</button>
           </div>
+
+          <div id="contactFormStatus" style="display:none; text-align:center; margin-top: 16px; padding: 16px; border-radius: 8px; font-weight: 500;"></div>
         </form>
       </div>
     </section>
@@ -179,7 +187,7 @@
       <div class="container">
         <h2>Prefer to Talk?</h2>
         <p>Give us a call and we'll help you right away.</p>
-        <a href="tel:5551234567" class="btn btn-cta btn-lg">Call (555) 123-4567</a>
+        <a href="tel:5854693964" class="btn btn-cta btn-lg">Call (585) 469-3964</a>
       </div>
     </section>
 
@@ -197,7 +205,7 @@
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
-          <a href="tel:5551234567">(555) 123-4567</a>
+          <a href="tel:5854693964">(585) 469-3964</a>
           <a href="mailto:Info@majicservice.com">Info@majicservice.com</a>
         </div>
         <div class="footer-col">
